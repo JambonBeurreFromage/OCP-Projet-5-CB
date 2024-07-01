@@ -1,0 +1,22 @@
+header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin: 3rem;
+	font-weight: 500;
+
+	img {
+		width: 12.1rem;
+	}
+
+	a {
+		margin-left: 1rem;
+		text-decoration: none;
+		color: black;
+	}
+
+	.header__a--select {
+		text-decoration: underline;
+	}
+}

@@ -1,7 +1,20 @@
-@use 'variables';
+@import 'variables';
 
+main {
+	margin: 1.5rem 3rem;
 
-.App {
-  text-align: center;
-  background-color: variables.$main-background-color;
+	ul {
+		margin: 2rem 0;
+		background-color: $grey-background;
+		border-radius: 10px;
+		padding: 2rem;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, 1fr);
+		gap: 2rem;
+		justify-items: center;
+	}
+
+	li {
+		list-style: none;
+	}
 }

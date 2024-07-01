@@ -1,0 +1,54 @@
+@import 'variables';
+
+.sheet {
+	.sheet__img {
+		width: 100%;
+	}
+
+	.sheet__presentation {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		h1 {
+			margin: 1rem 0px 0.4rem 0px;
+			font-size: 1.5rem;
+			color: $red-light;
+		}
+
+		h2 {
+			font-size: 1.1rem;
+		}
+		.sheet__presentation-tag {
+			margin-top: 0.5rem;
+			display: flex;
+			span {
+				margin-right: 6px;
+				min-width: 15%;
+				padding: 2px 10px;
+				border-radius: 10px;
+				text-align: center;
+				font-weight: 700;
+				background-color: $red-light;
+				color: white;
+			}
+		}
+
+		.sheet__presentation-host {
+			margin-top: 1rem;
+			display: flex;
+			justify-content: space-between;
+
+			.sheet__presentation-host-picture {
+				display: flex;
+				align-items: center;
+				color: $red-light;
+				img {
+					margin-left: 1rem;
+					border-radius: 50%;
+					height: 2.667rem;
+				}
+			}
+		}
+	}
+}

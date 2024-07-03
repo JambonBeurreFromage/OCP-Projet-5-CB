@@ -8,8 +8,10 @@ import forward from '../Assets/arrow_forward.png'
 function Carrousel({ title, pictures }) {
 	const [imgIndex, setImgIndex] = useState(0)
 
-	function clickG() {
+	function clickG(e) {
 		let newIndex = imgIndex - 1
+
+		e.preventDefault()
 		if (newIndex === -1) {
 			newIndex = pictures.length - 1
 			setImgIndex(newIndex)
@@ -18,8 +20,10 @@ function Carrousel({ title, pictures }) {
 		}
 	}
 
-	function clickD() {
+	function clickD(e) {
 		let newIndex = imgIndex + 1
+
+		e.preventDefault()
 		if (newIndex === pictures.length) {
 			newIndex = 0
 			setImgIndex(newIndex)
@@ -40,18 +44,18 @@ function Carrousel({ title, pictures }) {
 					<>
 						<button
 							className="carrousel__button left"
-							onClick={clickG}
+							onClick={(e) => clickG(e)}
 						>
-							<img src={back} alt="" />
+							<img src={back} alt="Flêche précédente" />
 						</button>
 						<span className="carrousel__index">
 							{imgIndex + 1}/{pictures.length}
 						</span>
 						<button
 							className="carrousel__button right"
-							onClick={clickD}
+							onClick={(e) => clickD(e)}
 						>
-							<img src={forward} alt="" />
+							<img src={forward} alt="Flêche suivante" />
 						</button>
 					</>
 				) : null}

@@ -13,6 +13,10 @@
 	min-height: 100%;
 }
 
+//////MediaQueries///////
+
+/////Change la taille de la police pour changer toute les tailles relatives en rem/////
+/// taile de référence, menu de navigation 12px en version mobile, 24 à partir de 768px///
 @media (min-width: 768px) {
 	* {
 		font-size: 24px;
@@ -21,6 +25,24 @@
 	main {
 		ul {
 			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	//Modification de la distribution des collapses sur la page de détail des logements//
+	.sheet__detail {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+
+		.collapse {
+			width: 49%;
+		}
+	}
+
+	//Modification de la taile des collapses sur la page à propos//
+	.about {
+		.about__collapse {
+			margin: 0 10%;
 		}
 	}
 }

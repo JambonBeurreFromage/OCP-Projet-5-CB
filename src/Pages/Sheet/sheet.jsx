@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom'
 
 ///////Importation components/////
 import Carrousel from '../../Components/carrousel'
+import Collapse from '../../Components/collapse.jsx'
 
 function Sheet() {
 	// récupération des élément du hook location passé par le composent Home
@@ -43,12 +44,9 @@ function Sheet() {
 				</div>
 			</div>
 			{/* Détails sur le logement */}
-			<div className="sheet__detail"></div>
-			<p>{description}</p>
-			<div>
-				{equipments.map((equipment, index) => (
-					<span key={`equipment ${index}`}>{equipment}</span>
-				))}
+			<div className="sheet__detail">
+				<Collapse name={'Description'} elements={description} />
+				<Collapse name={'Équipements'} elements={equipments} />
 			</div>
 		</main>
 	)

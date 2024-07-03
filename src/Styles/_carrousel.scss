@@ -8,6 +8,11 @@
 
 	.carrousel__button {
 		position: absolute;
+
+		img {
+			height: 5rem;
+			cursor: pointer;
+		}
 	}
 
 	.left {

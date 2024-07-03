@@ -40,7 +40,7 @@ function Main() {
 				/>
 			}
 
-			<ul>
+			<ul className="main__ul">
 				{bdo.map(({ id, cover, title }) => (
 					<li key={id}>
 						<button onClick={(e) => callSheet(e, id)}>

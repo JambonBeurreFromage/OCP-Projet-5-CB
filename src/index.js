@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './Styles/index.scss'
 
 ////////////////importation pages/////////////////////
-import Home from './Pages/Home/main.jsx'
+import Main from './Pages/Home/main.jsx'
 import Sheet from './Pages/Sheet/sheet.jsx'
 import About from './Pages/About/about.jsx'
 import NoFound from './Pages/NoFound/noPage.jsx'
@@ -20,8 +20,8 @@ root.render(
 		<Router>
 			<Header />
 			<Routes>
-				<Route path="/" element={<Home />} />
-				<Route path="/sheet" element={<Sheet />} />
+				<Route path="/" element={<Main />} />
+				<Route path="/sheet/:id" element={<Sheet />} />
 				<Route path="/about" element={<About />} />
 				<Route path="*" element={<NoFound />} />
 			</Routes>

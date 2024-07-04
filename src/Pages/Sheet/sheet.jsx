@@ -2,7 +2,8 @@ import React from 'react'
 import { useLocation } from 'react-router-dom'
 
 ///////Importation components/////
-import Carrousel from '../../Components/carrousel'
+import Carrousel from '../../Components/carrousel.jsx'
+import Rating from '../../Components/ratin.jsx'
 import Collapse from '../../Components/collapse.jsx'
 
 function Sheet() {
@@ -36,7 +37,9 @@ function Sheet() {
 				</div>
 				{/* Présentation de l'hote */}
 				<div className="sheet__presentation-host">
-					<span>note: {rating}</span>
+					<span>
+						<Rating rating={rating} />
+					</span>
 					<div className="sheet__presentation-host-picture">
 						<span>{host.name}</span>
 						<img src={host.picture} alt={host.name} />

@@ -12,7 +12,6 @@ import Card from '../../Components/card.jsx'
 function Main() {
 	const navigate = useNavigate()
 	const callSheet = (e, id) => {
-		console.log(e)
 		const data = bdo.find((item) => item.id === id)
 
 		e.preventDefault()

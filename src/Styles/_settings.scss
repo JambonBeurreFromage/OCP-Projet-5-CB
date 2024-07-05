@@ -34,6 +34,18 @@
 		}
 	}
 
+	//Modification de la répartition entre les notes et la présentation de l'hote sur la page logement
+	.sheet {
+		.sheet__presentation {
+			flex-direction: row;
+			.sheet__presentation-host {
+				display: flex;
+				justify-content: space-evenly;
+				align-items: flex-end;
+				flex-direction: column-reverse;
+			}
+		}
+	}
 	//Modification de la distribution des collapses sur la page de détail des logements//
 	.sheet__detail {
 		display: flex;

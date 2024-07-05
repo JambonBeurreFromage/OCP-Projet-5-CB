@@ -1,5 +1,5 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
 
 ///////Importation objets/////
 import bdo from '../../Data/bdo.json'
@@ -10,10 +10,23 @@ import Rating from '../../Components/rating.jsx'
 import Collapse from '../../Components/collapse.jsx'
 
 function Sheet() {
-	// récupération des élément du hook location passé par le composent Home
+	// récupération de l'id du hook useParams passé par le composent Home
 	const { id } = useParams()
+	const navigate = useNavigate()
 
+	//Cherche dans la bdo l'élément avec le même id
 	const data = bdo.find((item) => item.id === id)
+
+	//Vérifi immédiatement si data a bien des données, si pas d'id trouvé renvoi directement en 404
+	useEffect(() => {
+		if (!data) {
+			navigate('/*')
+		}
+	}, [data, navigate])
+
+	if (!data) {
+		return null
+	}
 
 	return (
 		<main className="sheet">
@@ -24,20 +37,22 @@ function Sheet() {
 
 			{/* Présentation du logement et de l'hote en récupérant directement en BDO nom prénom et photo*/}
 			<div className="sheet__presentation">
-				<h1>{data.title}</h1>
-				<h2>{data.place}</h2>
+				<div className="sheet__presentation-location">
+					<h1>{data.title}</h1>
+					<h2>{data.location}</h2>
 
-				{/* récupération des tags en bdo */}
-				<div className="sheet__presentation-tag">
-					{data.tags.map((tag, index) => (
-						<span key={`tag ${index}`}>{tag}</span>
-					))}
+					{/* récupération des tags en bdo */}
+					<div className="sheet__presentation-tag">
+						{data.tags.map((tag, index) => (
+							<span key={`tag ${index}`}>{tag}</span>
+						))}
+					</div>
 				</div>
 
 				{/* Présentation de l'hote */}
 				<div className="sheet__presentation-host">
 					{/* appel du component rating avec la récupération de la note en BDO */}
-					<span>
+					<span className="sheet__presentation-host-rating">
 						<Rating rating={data.rating} />
 					</span>
 					<div className="sheet__presentation-host-picture">

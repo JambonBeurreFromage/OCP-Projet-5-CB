@@ -10,37 +10,44 @@
 		flex-direction: column;
 		justify-content: space-between;
 
-		h1 {
-			margin: 1rem 0px 0.4rem 0px;
-			font-size: 1.5rem;
-			color: $red-light;
-		}
+		.sheet__presentation-location {
+			h1 {
+				margin: 1rem 0px 0.4rem 0px;
+				font-size: 1.5rem;
+				color: $red-light;
+			}
 
-		h2 {
-			font-size: 1.1rem;
-		}
-		.sheet__presentation-tag {
-			margin-top: 0.5rem;
-			display: flex;
-			flex-wrap: wrap;
-			gap: 0.5rem;
-			span {
-				min-width: 6.25rem;
-				padding: 0.35rem 10px;
-				border-radius: 0.7rem;
-				text-align: center;
-				justify-content: center;
-				font-size: 0.833rem;
-				font-weight: 700;
-				background-color: $red-light;
-				color: white;
+			h2 {
+				font-size: 1.1rem;
+			}
+
+			.sheet__presentation-tag {
+				margin-top: 0.5rem;
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5rem;
+				span {
+					min-width: 6.25rem;
+					padding: 0.35rem 10px;
+					border-radius: 0.7rem;
+					text-align: center;
+					justify-content: center;
+					font-size: 0.833rem;
+					font-weight: 700;
+					background-color: $red-light;
+					color: white;
+				}
 			}
 		}
 
 		.sheet__presentation-host {
-			margin-top: 1rem;
 			display: flex;
 			justify-content: space-between;
+			align-items: center;
+
+			.sheet__presentation-host-rating {
+				margin-top: 0.2rem;
+			}
 
 			.sheet__presentation-host-picture {
 				display: flex;

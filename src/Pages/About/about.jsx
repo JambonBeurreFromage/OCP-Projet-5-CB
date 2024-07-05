@@ -11,8 +11,13 @@ function About() {
 		<main className="about">
 			<Banner src={backgroundImage2} alt="photo de montagne" text="" />
 			<div className="about__collapse">
-				{info.map(({ title, content }) => (
-					<Collapse name={title} elements={content} />
+				{/* créer un component collapse pour chaque élément de la bdo texte */}
+				{info.map(({ title, content, index }) => (
+					<Collapse
+						key={`${title} ${index}`}
+						name={title}
+						elements={content}
+					/>
 				))}
 			</div>
 		</main>

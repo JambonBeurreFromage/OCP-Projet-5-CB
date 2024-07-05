@@ -15,13 +15,14 @@ main {
 	}
 
 	li {
+		width: 100%;
 		list-style: none;
 	}
 
-	button {
+	.main__link {
+		display: block;
 		height: 21.25rem;
+		width: 100%;
 		border-radius: 10px;
-		background: none;
-		border: none;
 	}
 }

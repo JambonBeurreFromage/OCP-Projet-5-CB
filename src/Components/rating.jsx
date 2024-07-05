@@ -6,13 +6,13 @@ function Rating({ rating }) {
 
 	return (
 		<div className="rating">
-			{range.map((rangeElement) =>
+			{range.map((rangeElement, index) =>
 				rating >= rangeElement ? (
-					<span>
+					<span key={`red ${index}`}>
 						<img src={star_icon_red} alt="Etoile positive" />
 					</span>
 				) : (
-					<span>
+					<span key={`gey ${index}`}>
 						<img src={star_icon_grey} alt="Etoile négative" />
 					</span>
 				)

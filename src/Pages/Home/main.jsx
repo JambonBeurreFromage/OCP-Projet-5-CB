@@ -1,5 +1,5 @@
 /////////////////Import /////////////////////
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 /////////////////Import objets///////////////
 import backgroundImage1 from '../../Assets/backgroundImg1.jpg'
@@ -10,25 +10,6 @@ import Banner from '../../Components/banner.jsx'
 import Card from '../../Components/card.jsx'
 
 function Main() {
-	const navigate = useNavigate()
-	const callSheet = (e, id) => {
-		const data = bdo.find((item) => item.id === id)
-
-		e.preventDefault()
-
-		navigate(`/sheet/${id}`, {
-			state: {
-				title: data.title,
-				pictures: data.pictures,
-				description: data.description,
-				host: data.host,
-				rating: data.rating,
-				location: data.location,
-				equipments: data.equipments,
-				tags: data.tags
-			}
-		})
-	}
 	return (
 		<main>
 			{
@@ -39,12 +20,14 @@ function Main() {
 				/>
 			}
 
+			{/* liste les  différents logements avec le component card prenant en attributs des éléments de la bdo
+			le link appel la route /sheet+numéro d'identification du logement en bdo*/}
 			<ul className="main__ul">
 				{bdo.map(({ id, cover, title }) => (
 					<li key={id}>
-						<button onClick={(e) => callSheet(e, id)}>
+						<Link to={`/sheet/${id}`} className="main__link">
 							<Card cover={cover} title={title} />
-						</button>
+						</Link>
 					</li>
 				))}
 			</ul>
